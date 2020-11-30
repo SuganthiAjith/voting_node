@@ -2,15 +2,16 @@ const express = require("../node_modules/express");
 const admin = express.Router();
 const adminroute = require("../models/adminlist");
 
-
-
-admin.post("/", (req, res) => {
-        res.send("list is working");
-        console.log(req.body);
+admin.get("/get", async(req , res) => {
+    try{
+        const input = await adminroute.find();
+        res.json(input);
+    } catch(err){
+        res.send('error'+err);
+    }
     });
 
-
-    admin.post("/addadmin", (req , res) => {
+    admin.post("/add", (req , res) => {
         const { User_Name, Password, } = req.body;
         console.log(req.body);
     

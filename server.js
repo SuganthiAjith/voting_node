@@ -17,7 +17,10 @@ app.get("/", (req, res) => {
 // import routes=======>
 
 app.use("/candlist", require("./route/candroute"));
-// app.use("/adminlist", require("./route/adminroute"));
+app.use("/adminlist", require("./route/adminroute"));
+app.use("/zonelist", require("./route/zoneroute"));
+app.use("/votelist", require("./route/voteroute"));
+app.use("/partylist", require("./route/partyroute"));
 
 
 mongoose.connect(

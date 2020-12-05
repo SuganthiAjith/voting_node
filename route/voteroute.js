@@ -5,12 +5,11 @@ const voteroute = require("../models/votelist");
  
 
 router.get("/get", async(req , res) => {
-    try{
+    {
         const input = await voteroute.find();
+        res.append("Access-Control-Allow-Origin","*");
         res.json(input);
-    } catch(err){
-        res.send('error'+err);
-    }
+    } 
     });
 router.post("/add", (req , res) => {
     const {candidate_Name , zone_Name , vote} = req.body;

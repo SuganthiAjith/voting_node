@@ -2,6 +2,10 @@ const express = require("express");
 const app = express();
 const mongoose = require("mongoose");
 const body_parser = require("body-parser");
+const ejs = require("ejs");
+const cors = require("cors");
+
+app.set('view engine', 'ejs');
 
 app.use(body_parser.json());
 
@@ -13,6 +17,12 @@ app.get("/", (req, res) => {
     res.send("server created");
     console.log("hjsgduyas");
 });
+
+app.options("*", cors());
+app.use(body_parser.json({ type: "application/*+json" }));
+app.use(body_parser.raw({ type: "application/vnd.custom-type" }));
+app.use(body_parser.text({ type: "text/html" }));
+
 
 // import routes=======>
 

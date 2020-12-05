@@ -2,13 +2,12 @@ const express = require("../node_modules/express");
 const admin = express.Router();
 const adminroute = require("../models/adminlist");
 
-admin.get("/get", async(req , res) => {
-    try{
+admin.get("/get", async(req , res) => 
+    {
         const input = await adminroute.find();
-        res.json(input);
-    } catch(err){
-        res.send('error'+err);
-    }
+        // res.render('sample', {input});
+         res.append("Access-Control-Allow-Origin","*");
+         res.json(input);
     });
 
     admin.post("/add", (req , res) => {

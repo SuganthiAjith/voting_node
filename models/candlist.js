@@ -36,22 +36,22 @@ const candlist = mongoose.Schema({
     Address: {
         type: String,
         required: true,
-        Door_No:{
-            type: String,
-            required: true,
-        },
-        Street_Name: {
-            type: String,
-            required: true,
-        },
-        City: {
-            type: String,
-            required: true,
-        },
-        Pincode: {
-            type: Number,
-            required: true,
-        },
+        // Door_No:{
+        //     type: String,
+        //     required: true,
+        // },
+        // Street_Name: {
+        //     type: String,
+        //     required: true,
+        // },
+        // City: {
+        //     type: String,
+        //     required: true,
+        // },
+        // Pincode: {
+        //     type: Number,
+        //     required: true,
+        // },
     },
     Occupation:{
         type: String,

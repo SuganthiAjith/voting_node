@@ -7,6 +7,8 @@ const candroute = require("../models/candlist");
 router.get("/get", async(req , res) => {
     try{
         const input = await candroute.find();
+        res.append("Access-Control-Allow-Origin","*");
+
         res.json(input);
     } catch(err){
         res.send('error'+err);
